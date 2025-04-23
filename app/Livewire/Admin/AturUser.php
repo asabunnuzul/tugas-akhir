@@ -22,6 +22,8 @@ class AturUser extends Component
         'role' => 'required',
     ];
 
+    protected $messages = ['*.required' => 'Silahkan Dipilih'];
+
     public function mount()
     {
         $this->listRole = Role::query()

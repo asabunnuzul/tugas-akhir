@@ -13,20 +13,33 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100">
-        <livewire:layout.navigation />
-        <!-- Page Content -->
-        <div class="bg-white p-5 overflow-hidden shadow-sm sm:rounded-lg">
-            <div class="p-6 text-gray-900">
-                <main>
-                    {{ $slot }}
-                </main>
-            </div>
+<body class="font-sans antialiased bg-gray-50 text-slate-600" x-data="{ open: false }">
+    <div class="block lg:hidden">
+        <x-sidebar.responsive />
+    </div>
+    <div class="flex">
+        <aside class="z-20 hidden h-full py-10 overflow-y-auto bg-white lg:fixed lg:block lg:w-80" x-cloak>
+            <x-sidebar.layout />
+        </aside>
+        <div class="flex-1 w-full overflow-y-auto lg:ml-80">
+            <x-siakad.navbar />
+            <main class="min-h-screen px-3 py-16">
+                {{ $slot }}
+            </main>
+            <footer
+                class="fixed bottom-0 w-full px-2 py-1 border-t text-slate-600 bg-white/30 backdrop-blur border-emerald-300">
+                &copy; SMK Miftahul Huda {{ date('Y') }} | Assabun Nuzul
+            </footer>
         </div>
     </div>
 </body>

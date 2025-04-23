@@ -1,31 +1,54 @@
-<div class="space-y-5">
-    <x-header>Data User</x-header>
-    <table class="w-full">
-        <thead>
-            <tr>
-                <th>No</th>
-                <th class="text-left">Nama</th>
-                <th class="text-left">Username</th>
-                <th class="text-left">Roles</th>
-                <th>Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($this->listUser as $key => $user)
-                <tr :key="$key">
-                    <td class="text-center">{{ $loop->iteration }}</td>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->username }}</td>
-                    <td>
-                        <ul class=" list-inside">
-                            @foreach ($user->roles as $index => $role)
-                                <li class=" list-disc" :key="$index">{{ $role->name }}</li>
-                            @endforeach
-                        </ul>
-                    </td>
-                    <td class="flex justify-center"><x-hapus :id="$user->id" /></td>
+<x-siakad.card>
+    <x-siakad.header>Data User</x-siakad.header>
+    <div wire:loading.remove class="pt-2 mt-5 overflow-x-auto">
+        <table class="w-full text-sm text-slate-600">
+            <thead class="text-sm text-slate-600 bg-gray-50">
+                <tr>
+                    <th scope='col' class="px-2 py-3">
+                        No
+                    </th>
+                    <th scope='col' class="px-2 py-3 text-left">
+                        Nama
+                    </th>
+                    <th scope='col' class="px-2 py-3 text-left">
+                        Username
+                    </th>
+                    <th scope='col' class="px-2 py-3 text-left">
+                        Role
+                    </th>
+                    <th scope='col' class="px-2 py-3 text-left">
+                        Aksi
+                    </th>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+                @foreach ($this->listUser as $index => $user)
+                    <tr wire:key="{{ $index }}" class="bg-white border-b hover:bg-slate-300 odd:bg-slate-200">
+                        <td class="px-2 py-2 font-medium text-center text-slate-600">
+                            {{ $loop->iteration }}
+                        </td>
+                        <td class="px-2 py-2 font-medium text-slate-600">
+                            {{ $user->name }}
+                        </td>
+                        <td class="px-2 py-2 font-medium text-slate-600">
+                            {{ $user->username }}
+                        </td>
+                        <td class="px-2 py-2 font-medium text-slate-600">
+                            @foreach ($user->roles as $r)
+                                <li wire:key="{{ $r->id }}"
+                                    class='flex items-center justify-between'>
+                                    <div>
+                                        {{ $loop->iteration }}. {{ $r->name }}
+                                    </div>
+                                </li>
+                            @endforeach
+                        </td>
+                        <td class="px-2 py-2 font-medium text-slate-600">
+                            <x-siakad.hapus :id="$user->id" />
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+</x-siakad.card>

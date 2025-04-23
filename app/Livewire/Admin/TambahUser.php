@@ -21,7 +21,8 @@ class TambahUser extends Component
     ];
 
     protected $messages = [
-        '*.required' => 'Silahkan Diisi'
+        '*.required' => 'Silahkan Diisi',
+        '*.unique' => 'Username Sudah Dipakai, Silahkan Ganti Yang Lain'
     ];
 
     public function render()

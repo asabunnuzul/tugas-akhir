@@ -1,14 +1,12 @@
-<div class="space-y-5">
-    <x-header>Buat Role</x-header>
+<x-siakad.card>
+    <x-siakad.header>Buat Role</x-siakad.header>
 
     <form wire:submit.prevent='simpan' class="space-y-5">
         <div class="space-y-3 lg:grid lg:grid-cols-2 lg:gap-2 lg:space-y-0">
-            <div class="flex flex-col space-y-1">
-                <x-input-label value="Nama Role"/>
-                <x-text-input wire:model='nama' label='Role' autofocus />
-            </div>
+            <x-siakad.input wire:model='nama' label='Nam Role' autofocus />
         </div>
-        <x-primary-button type='submit' wire:click.prevent='simpan'>Simpan</x-primary-button>
+        <x-siakad.button type='submit' wire:click.prevent='simpan' label="simpan" spinner="simpan"
+            wire:loading.attr='disabled' />
     </form>
     <div class="mt-5 overflow-x-auto">
         <table class="w-full text-sm text-slate-600">
@@ -42,4 +40,4 @@
             </tbody>
         </table>
     </div>
-</div>
+</x-siakad.card>
