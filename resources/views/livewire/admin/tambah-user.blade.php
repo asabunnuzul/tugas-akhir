@@ -13,7 +13,7 @@
 
         <!-- Password -->
         <div>
-            <x-input-label for="username" :value="__('username')" />
+            <x-input-label for="username" :value="__('Username')" />
 
             <x-text-input wire:model="username" id="username" class="block mt-1 w-full" type="text" name="username"
                 required autocomplete="current-username" />
