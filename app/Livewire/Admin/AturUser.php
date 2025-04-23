@@ -3,6 +3,8 @@
 namespace App\Livewire\Admin;
 
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use Livewire\Attributes\Computed;
 use Livewire\Component;
 use Spatie\Permission\Models\Role;
 
@@ -41,5 +43,22 @@ class AturUser extends Component
         $user = User::find($this->user_id);
         $user->assignRole($this->role);
         flash('Berhasil Atur User');
+    }
+
+    public function hapus($id)
+    {
+        User::find($id[0])
+            ->removeRole($id[1]);
+
+        flash()->addInfo('Berhasil Update Data Role');
+    }
+
+    #[Computed()]
+    public function listUser()
+    {
+        return User::query()
+            ->with('roles')
+            ->orderBy('name')
+            ->get();
     }
 }
