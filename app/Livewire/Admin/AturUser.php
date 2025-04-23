@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Livewire\Admin;
+
+use App\Models\User;
+use Livewire\Component;
+
+class AturUser extends Component
+{
+    public $user_id;
+    public $role;
+    public $listUser = [];
+
+    protected $rules = [
+        'user_id' => 'required',
+        'role' => 'required',
+    ];
+
+    public function mount()
+    {
+        $this->listUser = User::query()
+            ->whereNotNull('username')
+            ->orderBy('name')
+            ->get();
+    }
+
+    public function render()
+    {
+        return view('livewire.admin.atur-user');
+    }
+
+    public function simpan()
+    {
+        $this->validate();
+
+        $user = User::find($this->user_id);
+        $user->assignRole($this->role);
+        flash('Berhasil Atur User');
+    }
+}
