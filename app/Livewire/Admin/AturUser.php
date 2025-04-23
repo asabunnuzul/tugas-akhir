@@ -5,9 +5,11 @@ namespace App\Livewire\Admin;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\Computed;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 use Spatie\Permission\Models\Role;
 
+#[Title('Atur User')]
 class AturUser extends Component
 {
     public $user_id;
