@@ -16,7 +16,7 @@
                         <x-listuser :listUser="$listUser" wire:model="user_id" label="User" />
 
                         <!-- Password -->
-                        <x-listrole wire:model="role" />
+                        <x-listrole :listRole="$listRole" wire:model="role" />
                     </div>
 
 

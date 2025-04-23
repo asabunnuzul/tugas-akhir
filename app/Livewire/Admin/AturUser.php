@@ -4,12 +4,14 @@ namespace App\Livewire\Admin;
 
 use App\Models\User;
 use Livewire\Component;
+use Spatie\Permission\Models\Role;
 
 class AturUser extends Component
 {
     public $user_id;
     public $role;
     public $listUser = [];
+    public $listRole = [];
 
     protected $rules = [
         'user_id' => 'required',
@@ -18,6 +20,9 @@ class AturUser extends Component
 
     public function mount()
     {
+        $this->listRole = Role::query()
+            ->orderBy('name')
+            ->get();
         $this->listUser = User::query()
             ->whereNotNull('username')
             ->orderBy('name')

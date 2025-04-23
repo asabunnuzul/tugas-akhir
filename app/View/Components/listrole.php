@@ -22,8 +22,6 @@ class listrole extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.listrole', ['listRole' => Role::query()
-            ->orderBy('name')
-            ->get()]);
+        return view('components.listrole');
     }
 }
