@@ -20,6 +20,10 @@
         <x-sidebar.admin />
     @endrole
 
+    @role('Pembimbing')
+        <x-sidebar.pembimbing />
+    @endrole
+
     @role('Siswa')
         <x-sidebar.siswa />
     @endrole

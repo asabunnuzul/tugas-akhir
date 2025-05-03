@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\Sidebar;
+namespace App\View\Components\Siakad;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class WaliKelas extends Component
+class ListUser extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class WaliKelas extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.sidebar.wali-kelas');
+        return view('components.siakad.list-user');
     }
 }

@@ -1,4 +1,4 @@
-@props(['label' => 'Pilih Karyawan', 'listUser', 'isAlpine' => false, 'isLoading' => true])
+@props(['label' => 'Pilih User', 'listUser', 'isAlpine' => false, 'isLoading' => true])
 <div class="flex flex-col space-y-1 capitalize text-md text-slate-600">
     <div>{{ $label }}</div>
     <select {{ $attributes }}

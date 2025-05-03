@@ -1,7 +1,8 @@
 Admin
 1. data kelas  php artisan migrate --seed --seeder=KelasSeeder
 2. data siswa dan tahun ajaran
-3. mengatur kelas dari pembimbing
+        a. composer install --optimize-autoloader
+        b. php artisan migrate
 
 Pembimbing
 1. mengatur data siswa : menambah , edit , update dan hapus data siswa. 

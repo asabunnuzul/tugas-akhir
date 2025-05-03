@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\Sidebar;
+namespace App\View\Components\Siakad;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Bendahara extends Component
+class ListSiswa extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class Bendahara extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.sidebar.bendahara');
+        return view('components.siakad.list-siswa');
     }
 }

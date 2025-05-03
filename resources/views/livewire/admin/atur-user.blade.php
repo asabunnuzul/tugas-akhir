@@ -1,16 +1,15 @@
 <x-siakad.card>
     <x-siakad.header>Atur User</x-siakad.header>
 
-    {{-- Main Layout --}}
     <div class="md:grid md:grid-cols-2 md:gap-2 md:space-y-0 mb-3">
-        <x-listuser :listUser="$listUser" wire:model="user_id" label="User" />
-        <x-listrole :listRole="$listRole" wire:model="role" />
+        <x-siakad.list-user :listUser="$listUser" wire:model="user_id" label="User" />
+        <x-siakad.list-role :listRole="$listRole" wire:model="role" />
     </div>
 
     <div class="my-3">
         <x-siakad.button wire:click.prevent='simpan' spinner="simpan" wire:loading.attr='disabled' label='Simpan' />
     </div>
-    <div wire:loading.remove class="pt-2 mt-5 overflow-x-auto">
+    <div class="pt-2 mt-5 overflow-x-auto">
         <table class="w-full text-sm text-slate-600">
             <thead class="text-sm text-slate-600 bg-gray-50">
                 <tr>

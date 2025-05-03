@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\Sidebar;
+namespace App\View\Components\Siakad;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class TataUsaha extends Component
+class ListHubin extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class TataUsaha extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.sidebar.tata-usaha');
+        return view('components.siakad.list-hubin');
     }
 }
