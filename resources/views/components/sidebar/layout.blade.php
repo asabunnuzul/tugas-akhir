@@ -24,6 +24,10 @@
         <x-sidebar.pembimbing />
     @endrole
 
+    @role('Hubin')
+        <x-sidebar.hubin />
+    @endrole
+
     @role('Siswa')
         <x-sidebar.siswa />
     @endrole
