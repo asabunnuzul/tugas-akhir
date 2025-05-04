@@ -19,3 +19,4 @@ require __DIR__ . '/auth.php';
 require __DIR__ . '/admin.php';
 require __DIR__ . '/hubin.php';
 require __DIR__ . '/pembimbing.php';
+require __DIR__ . '/siswa.php';
