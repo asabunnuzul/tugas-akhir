@@ -19,9 +19,9 @@ class SiswaPkl extends Model
      */
     public function absensis(): HasMany
     {
-        return $this->hasMany(Absensi::class,'nis','nis');
+        return $this->hasMany(Absensi::class, 'nis', 'nis');
     }
-    
+
     /**
      * Get the absensi that owns the SiswaPkl
      *
@@ -29,7 +29,7 @@ class SiswaPkl extends Model
      */
     public function absensi(): BelongsTo
     {
-        return $this->belongsTo(Absensi::class,'nis','nis')->withDefault();
+        return $this->belongsTo(Absensi::class, 'nis', 'nis')->withDefault();
     }
 
     /**
@@ -59,9 +59,19 @@ class SiswaPkl extends Model
      */
     public function pembimbing(): BelongsTo
     {
-        return $this->belongsTo(User::class,'pembimbing_id')->withDefault();
+        return $this->belongsTo(User::class, 'pembimbing_id')->withDefault();
     }
 
+    /**
+     * Get the penilaian that owns the SiswaPkl
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function penilaian(): BelongsTo
+    {
+        return $this->belongsTo(Penilaian::class, 'nis', 'nis')->withDefault();
+    }
+    
     /**
      * Get the siswa that owns the SiswaPkl
      *

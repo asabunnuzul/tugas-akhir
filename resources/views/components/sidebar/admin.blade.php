@@ -1,5 +1,6 @@
 <div class="py-2">
     <div class="font-bold text-slate-700">Admin</div>
+    <x-sidebar.link route="atur-kategori-nilai" wire:navigate />
     <x-sidebar.link route="atur-siswa-pkl" wire:navigate />
     <x-sidebar.link route="atur-user" wire:navigate />
     <x-sidebar.link route="biodata-siswa" wire:navigate />
