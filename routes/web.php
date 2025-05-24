@@ -2,6 +2,7 @@
 
 use App\Livewire\Dashboard;
 use App\Livewire\Auth\Logout;
+use App\Livewire\Admin\AturUser;
 use App\Livewire\ProfilePengguna;
 use Illuminate\Support\Facades\Route;
 
@@ -11,6 +12,7 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
+Route::get('atur-user', AturUser::class)->name('atur-user')->lazy();
 Route::get('dashboard', Dashboard::class)->name('dashboard')->middleware('auth');
 Route::get('profile-pengguna', ProfilePengguna::class)->name('profile-pengguna');
 Route::post('logout', Logout::class)->name('logout');

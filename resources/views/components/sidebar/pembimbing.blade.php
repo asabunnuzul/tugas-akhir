@@ -6,4 +6,5 @@
     <x-sidebar.link route="data-hubin" wire:navigate />
     <x-sidebar.link route="data-siswa-pkl" wire:navigate />
     <x-sidebar.link route="input-nilai" wire:navigate />
+    <x-sidebar.link route="print-nilai" wire:navigate />
 </div>

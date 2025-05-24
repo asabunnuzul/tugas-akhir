@@ -18,6 +18,6 @@ class Penilaian extends Model
      */
     public function kategori(): BelongsTo
     {
-        return $this->belongsTo(KategoriNilai::class)->withDefault();
+        return $this->belongsTo(KategoriNilai::class, 'kategori_nilai_id')->withDefault();
     }
 }

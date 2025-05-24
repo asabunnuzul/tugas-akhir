@@ -12,7 +12,7 @@
     <meta http-equiv="refresh" content="{{ config('session.lifetime') * 60 }}">
 
     <!-- Logo -->
-    <link rel="icon" href="{{ Storage::disk('s3')->url('smk/public/logo.png') }}" type="image/png" sizes="16x16" />
+    <link rel="icon" href="{{ asset('logo56.png') }}" type="image/png" sizes="16x16" />
 
     <!-- Fonts -->
     {{--
@@ -139,12 +139,6 @@
 </head>
 
 <body>
-    @isset($no_header)
-    @else
-        <div class="pb-2 pl-16 pr-10 pt-7">
-            @include('layouts.print.header')
-        </div>
-    @endisset
     <div class="px-7">
         @yield('content')
     </div>

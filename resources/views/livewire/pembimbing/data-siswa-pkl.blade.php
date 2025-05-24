@@ -30,6 +30,9 @@
                         Nama Hubin
                     </th>
                     <th scope='col' class="px-2 py-3 text-left">
+                        Alamat
+                    </th>
+                    <th scope='col' class="px-2 py-3 text-left">
                         Pembimbing Hubin
                     </th>
                     <th scope='col' class="px-2 py-3 text-left">
@@ -51,6 +54,9 @@
                         </td>
                         <td class="px-2 py-2 font-medium text-slate-600">
                             {{ $siswa->hubin?->nama }}
+                        </td>
+                        <td class="px-2 py-2 font-medium text-slate-600">
+                            {{ $siswa->hubin?->alamat }}
                         </td>
                         <td class="px-2 py-2 font-medium text-slate-600">
                             {{ $siswa->userHubin?->name }}
