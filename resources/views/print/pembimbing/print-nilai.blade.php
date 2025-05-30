@@ -35,6 +35,14 @@
                             </td>
                         </tr>
                     @endforeach
+                    <tr class="bg-white border-b hover:bg-slate-300 odd:bg-slate-200">
+                        <td colspan="2" class="px-2 py-2 font-bold text-center text-slate-600 border border-collapse border-black">
+                            Rata - Rata
+                        </td>
+                        <td class="px-2 py-2 text-center font-medium text-slate-600 border border-collapse border-black">
+                            {{ $listNilai->avg('nilai') }}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
