@@ -35,7 +35,8 @@
                         <td class="px-2 py-2 font-medium text-slate-600">
                             {{ $hubin->alamat }}
                         </td>
-                        <td class="px-2 py-2 font-medium flex justify-center text-slate-600">
+                        <td class="px-2 py-2 font-medium flex gap-3 justify-center text-slate-600">
+                            <x-siakad.link-edit href="{{ route('data-hubin.edit', $hubin->id) }}" wire:navigate />
                             <x-siakad.hapus :id="$hubin->id" />
                         </td>
                     </tr>
