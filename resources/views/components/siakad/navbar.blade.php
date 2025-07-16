@@ -23,7 +23,7 @@
         @endrole
         <div
             class="font-extrabold text-transparent place-items-end text-md lg:text-xl bg-gradient-to-r bg-clip-text from-emerald-500 via-lime-500 to-teal-500 animate-text">
-            Sistem Informasi Akademik
+            Sistem Praktik Lapangan
         </div>
     </div>
 </nav>
