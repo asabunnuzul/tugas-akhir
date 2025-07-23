@@ -14,6 +14,9 @@
                     <th scope='col' class="px-2 py-3 text-left">
                         Nama Kategori
                     </th>
+                    <th scope='col' class="px-2 py-3">
+                        Aksir
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -24,6 +27,9 @@
                         </td>
                         <td class="px-2 py-2 font-medium text-slate-600">
                             {{ $kategori->nama }}
+                        </td>
+                        <td class="px-2 py-2 font-medium text-slate-600">
+                            <x-siakad.hapus :id="$kategori->id" />
                         </td>
                     </tr>
                 @endforeach

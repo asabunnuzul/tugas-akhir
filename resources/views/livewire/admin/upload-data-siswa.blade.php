@@ -1,10 +1,11 @@
 <x-siakad.card>
-    <div class="mb-20">
+    <form class="mb-20" method="POST" action="{{ route('upload-data-siswa-simpan') }}" enctype="multipart/form-data">
+        @csrf
         <x-siakad.header>upload data siswa</x-siakad.header>
-        <x-siakad.input class="p-3" type='file' label='Pilih File Excel' wire:model='file_upload' />
+        <x-siakad.input class="p-3" type='file' label='Pilih File Excel' name="file_upload" wire:model='file_upload' />
         <div class="mt-3">
-            <x-siakad.button icon='upload' label='Upload' positive wire:click.prevent='upload_siswa' spinner='upload_siswa'/>
+            <x-siakad.button icon='upload' label='Upload' type="submit" />
         </div>
-    </div>
+    </form>
     <x-siakad.skeleton />
-</x-siakad.card>    
+</x-siakad.card>

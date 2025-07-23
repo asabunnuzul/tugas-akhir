@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin;
 
 use App\Models\KategoriNilai;
+use App\View\Components\hapus;
 use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Title;
@@ -31,6 +32,20 @@ class AturKategoriNilai extends Component
             KategoriNilai::create(['nama' => $this->nama]);
             $this->reset();
             flash('Berhasil Tambah Kategori Nilai');
+            DB::commit();
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            throw $th;
+        }
+    }
+
+    public function hapus($id)
+    {
+        DB::beginTransaction();
+
+        try {
+            KategoriNilai::destroy($id);
+            flash()->warning('Berhasil Hapus Kategori Nilai');
             DB::commit();
         } catch (\Throwable $th) {
             DB::rollBack();

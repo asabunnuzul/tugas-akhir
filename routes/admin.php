@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\UploadDataSiswaSimpanController;
 use App\Livewire\Admin\AturKategoriNilai;
 use App\Livewire\Admin\BuatRole;
 use App\Livewire\Admin\DataKelas;
@@ -17,4 +18,5 @@ Route::middleware(['auth','role:Admin'])
     Route::get('tambah-user', TambahUser::class)->name('tambah-user')->lazy();
     Route::get('tambah-user', TambahUser::class)->name('tambah-user')->lazy();
     Route::get('upload-data-siswa', UploadDataSiswa::class)->name('upload-data-siswa')->lazy();
+    Route::post('upload-data-siswa-simpan', UploadDataSiswaSimpanController::class)->name('upload-data-siswa-simpan');
 });
