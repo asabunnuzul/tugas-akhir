@@ -1,6 +1,7 @@
 <x-siakad.card>
     <x-siakad.header>absensi siswa PKL</x-siakad.header>
     <div class="py-3 space-y-2 md:grid md:grid-cols-3 md:gap-2 md:space-y-0">
+        <x-siakad.tahun wire:model.live='tahun' />
         <x-siakad.input type='date' label='Tanggal' wire:model.live='tanggal' />
     </div>
     <div class="py-3" x-show="$wire.tanggal && $wire.tahun">
