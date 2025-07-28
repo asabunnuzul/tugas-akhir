@@ -42,6 +42,12 @@ class DataSiswaPkl extends Component
         return view('livewire.pembimbing.data-siswa-pkl');
     }
 
+    public function hapus($id)
+    {
+        SiswaPkl::destroy($id);
+        flash()->warning('Berhasil Hapus Siswa PKL');
+    }
+
     public function cari()
     {
         $this->resetPage();

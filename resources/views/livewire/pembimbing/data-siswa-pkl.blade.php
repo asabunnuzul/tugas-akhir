@@ -38,6 +38,9 @@
                     <th scope='col' class="px-2 py-3 text-left">
                         Pembimbing Sekolah
                     </th>
+                    <th scope='col' class="px-2 py-3">
+                        Aksi
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -63,6 +66,12 @@
                         </td>
                         <td class="px-2 py-2 font-medium text-slate-600">
                             {{ $siswa->pembimbing?->name }}
+                        </td>
+                        <td class="px-2 py-2 font-medium text-slate-600">
+                            <div class="flex gap-2">
+                                <x-siakad.link-edit href="{{ route('edit-siswa-pkl', $siswa->id) }}" />
+                                <x-siakad.hapus :id="$siswa->id" />
+                            </div>
                         </td>
                     </tr>
                 @endforeach
