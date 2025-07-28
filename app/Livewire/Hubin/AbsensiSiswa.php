@@ -6,7 +6,6 @@ use App\Models\Absensi;
 use Livewire\Component;
 use App\Models\SiswaPkl;
 use App\Traits\InitTrait;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Computed;
 
@@ -17,13 +16,11 @@ class AbsensiSiswa extends Component
 
     public $tahun;
     public $tanggal;
-    public $hubin_id;
     public $kehadiran = [];
 
     protected $rules = [
         'tanggal' => 'required',
         'tahun' => 'required',
-        'hubin_id' => 'required',
     ];
 
     protected $messages = ['*.required' => 'Silahkan Dipilih'];
@@ -31,11 +28,6 @@ class AbsensiSiswa extends Component
     public function mount()
     {
         $this->tahun = $this->data_tahun();
-        $this->hubin_id = SiswaPkl::query()
-            ->whereTahun($this->tahun)
-            ->whereUserHubinId(Auth::id())
-            ->get();
-
         $this->tanggal = date('Y-m-d');
     }
 
@@ -49,7 +41,7 @@ class AbsensiSiswa extends Component
         $this->validate();
 
         SiswaPkl::whereTahun($this->tahun)
-            ->whereIn('hubin_id',$this->hubin_id->pluck('hubin_id'))
+            ->whereUserHubinId(auth()->user()->id)
             ->whereDoesntHave(
                 'absensis',
                 fn($q) => $q->whereTanggal($this->tanggal)
@@ -62,7 +54,7 @@ class AbsensiSiswa extends Component
                     'tahun' => $this->tahun,
                     'tanggal' => $this->tanggal,
                     'kehadiran_id' => 1,
-                    'hubin_id' => Auth::id(),
+                    'hubin_id' => auth()->user()->id,
                 ])
             );
 
@@ -79,7 +71,7 @@ class AbsensiSiswa extends Component
                 ->update(
                     [
                         'kehadiran_id' => $value,
-                        'hubin_id' => Auth::id(),
+                        'hubin_id' => auth()->user()->id,
                     ]
                 );
         }
@@ -92,7 +84,7 @@ class AbsensiSiswa extends Component
     {
         return SiswaPkl::query()
             ->whereTahun($this->tahun)
-            ->whereIn('hubin_id',$this->hubin_id->pluck('hubin_id'))
+            ->whereUserHubinId(auth()->user()->id)
             ->with([
                 'absensi' => fn($q) =>
                 $q->whereTanggal($this->tanggal),
