@@ -31,7 +31,12 @@ class AbsensiSiswa extends Component
     public function mount()
     {
         $this->tahun = $this->data_tahun();
-        $this->hubin_id = Auth::id();
+        $this->hubin_id = SiswaPkl::query()
+            ->whereTahun($this->tahun)
+            ->whereUserHubinId(Auth::id())
+            ->latest()
+            ->first();
+
         $this->tanggal = date('Y-m-d');
     }
 
@@ -45,7 +50,7 @@ class AbsensiSiswa extends Component
         $this->validate();
 
         SiswaPkl::whereTahun($this->tahun)
-            ->whereHubinId($this->hubin_id)
+            ->whereHubinId($this->hubin_id?->hubin_id)
             ->whereDoesntHave(
                 'absensis',
                 fn($q) => $q->whereTanggal($this->tanggal)
@@ -88,7 +93,7 @@ class AbsensiSiswa extends Component
     {
         return SiswaPkl::query()
             ->whereTahun($this->tahun)
-            ->whereHubinId($this->hubin_id)
+            ->whereHubinId($this->hubin_id?->hubin_id)
             ->with([
                 'absensi' => fn($q) =>
                 $q->whereTanggal($this->tanggal),
