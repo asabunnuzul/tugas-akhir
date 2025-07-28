@@ -49,7 +49,7 @@ class AbsensiSiswa extends Component
         $this->validate();
 
         SiswaPkl::whereTahun($this->tahun)
-            ->whereIn('hubin_id',[$this->hubin_id->pluck('hubin_id')])
+            ->whereIn('hubin_id',$this->hubin_id->pluck('hubin_id'))
             ->whereDoesntHave(
                 'absensis',
                 fn($q) => $q->whereTanggal($this->tanggal)
@@ -92,7 +92,7 @@ class AbsensiSiswa extends Component
     {
         return SiswaPkl::query()
             ->whereTahun($this->tahun)
-            ->whereIn('hubin_id',[$this->hubin_id->pluck('hubin_id')])
+            ->whereIn('hubin_id',$this->hubin_id->pluck('hubin_id'))
             ->with([
                 'absensi' => fn($q) =>
                 $q->whereTanggal($this->tanggal),
