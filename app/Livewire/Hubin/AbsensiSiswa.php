@@ -31,12 +31,7 @@ class AbsensiSiswa extends Component
     public function mount()
     {
         $this->tahun = $this->data_tahun();
-        $this->hubin_id = SiswaPkl::query()
-            ->whereTahun($this->tahun)
-            ->whereUserHubinId(Auth::id())
-            ->latest()
-            ->first()
-            ->hubin_id;
+        $this->hubin_id = Auth::id();
         $this->tanggal = date('Y-m-d');
     }
 
