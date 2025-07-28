@@ -6,6 +6,7 @@ use App\Models\Absensi;
 use Livewire\Component;
 use App\Models\SiswaPkl;
 use App\Traits\InitTrait;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Computed;
 
@@ -32,7 +33,7 @@ class AbsensiSiswa extends Component
         $this->tahun = $this->data_tahun();
         $this->hubin_id = SiswaPkl::query()
             ->whereTahun($this->tahun)
-            ->whereUserHubinId(auth()->id())
+            ->whereUserHubinId(Auth::id())
             ->latest()
             ->first()
             ->hubin_id;
@@ -62,7 +63,7 @@ class AbsensiSiswa extends Component
                     'tahun' => $this->tahun,
                     'tanggal' => $this->tanggal,
                     'kehadiran_id' => 1,
-                    'hubin_id' => auth()->id(),
+                    'hubin_id' => Auth::id(),
                 ])
             );
 
@@ -79,7 +80,7 @@ class AbsensiSiswa extends Component
                 ->update(
                     [
                         'kehadiran_id' => $value,
-                        'hubin_id' => auth()->id(),
+                        'hubin_id' => Auth::id(),
                     ]
                 );
         }

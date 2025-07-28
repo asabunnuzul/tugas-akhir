@@ -36,7 +36,10 @@
                             {{ $siswa->kelas?->nama }}
                         </td>
                         <td class="px-2 py-2 font-medium text-slate-600">
-                            <x-siakad.input wire:model="listNilai.{{ $siswa->nis }}" />
+                            <x-siakad.input type="number" max="100" min="0"
+                                oninput="this.value = this.value > 100 ? 100 : this.value"
+                                wire:model="listNilai.{{ $siswa->nis }}" />
+
                         </td>
                     </tr>
                 @endforeach
