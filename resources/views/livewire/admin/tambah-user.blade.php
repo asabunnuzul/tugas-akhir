@@ -14,9 +14,11 @@
                 label="konfirmasi password" />
         </div>
 
-        <div class="my-3">
+        <div class="my-3 flex gap-2">
             <x-siakad.button type="submit" wire:click.prevent='simpan' wire:loading.attr='disabled' spinner="simpan"
                 label="simpan" />
+
+            <x-siakad.button href="{{ route('data-user') }}" label="batal" wire:navigate red />
         </div>
     </form>
 </x-siakad.card>

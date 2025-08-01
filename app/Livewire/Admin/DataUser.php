@@ -4,8 +4,10 @@ namespace App\Livewire\Admin;
 
 use App\Models\User;
 use Livewire\Attributes\Computed;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
+#[Title('Data User')]
 class DataUser extends Component
 {
 

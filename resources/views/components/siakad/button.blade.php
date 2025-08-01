@@ -4,7 +4,7 @@
         <a href="{{ $href }}"
             {{ $attributes->class([
                 'rounded-md capitalize text-white gap-x-2 text-base px-4 py-2 outline-none inline-flex justify-center items-center group transition-all ease-in duration-150 focus:ring-2 focus:ring-offset-2 hover:shadow-sm disabled:cursor-not-allowed',
-                'ring-emerald-500 bg-emerald-500 hover:bg-emerald-600 hover:ring-emerald-600 dark:ring-offset-slate-800 dark:bg-emerald-700 dark:ring-emerald-700 dark:hover:bg-emerald-600 dark:hover:ring-emerald-600 disabled:bg-emerald-300' =>
+                'ring-gray-500 bg-gray-500 hover:bg-gray-600 hover:ring-gray-600 dark:ring-offset-slate-800 dark:bg-gray-700 dark:ring-gray-700 dark:hover:bg-gray-600 dark:hover:ring-gray-600 disabled:bg-gray-300' =>
                     $red == false,
                 'ring-red-500 bg-red-500 hover:bg-red-600 hover:ring-red-600 dark:ring-offset-slate-800 dark:bg-red-700 dark:ring-red-700 dark:hover:bg-red-600 dark:hover:ring-red-600 disabled:bg-red-300' =>
                     $red == true,
@@ -53,7 +53,7 @@
         <button
             {{ $attributes->class([
                 'rounded-md capitalize text-white gap-x-2 text-base px-4 py-2 outline-none inline-flex justify-center items-center group transition-all ease-in duration-150 focus:ring-2 focus:ring-offset-2 hover:shadow-sm disabled:cursor-not-allowed',
-                'ring-emerald-500 bg-emerald-500 hover:bg-emerald-600 hover:ring-emerald-600 dark:ring-offset-slate-800 dark:bg-emerald-700 dark:ring-emerald-700 dark:hover:bg-emerald-600 dark:hover:ring-emerald-600 disabled:bg-emerald-300' =>
+                'ring-gray-500 bg-gray-500 hover:bg-gray-600 hover:ring-gray-600 dark:ring-offset-slate-800 dark:bg-gray-700 dark:ring-gray-700 dark:hover:bg-gray-600 dark:hover:ring-gray-600 disabled:bg-gray-300' =>
                     $red == false,
                 'ring-red-500 bg-red-500 hover:bg-red-600 hover:ring-red-600 dark:ring-offset-slate-800 dark:bg-red-700 dark:ring-red-700 dark:hover:bg-red-600 dark:hover:ring-red-600 disabled:bg-red-300' =>
                     $red == true,

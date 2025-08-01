@@ -1,6 +1,9 @@
 <x-siakad.card>
     <x-siakad.header>Data User</x-siakad.header>
-    <div wire:loading.remove class="pt-2 mt-5 overflow-x-auto">
+    <div class="py-5">
+        <x-siakad.button href="{{ route('tambah-user') }}" wire:navigate label="Tambah User" />
+    </div>
+    <div class="pt-2 mt-5 overflow-x-auto">
         <table class="w-full text-sm text-slate-600">
             <thead class="text-sm text-slate-600 bg-gray-50">
                 <tr>
@@ -35,8 +38,7 @@
                         </td>
                         <td class="px-2 py-2 font-medium text-slate-600">
                             @foreach ($user->roles as $r)
-                                <li wire:key="{{ $r->id }}"
-                                    class='flex items-center justify-between'>
+                                <li wire:key="{{ $r->id }}" class='flex items-center justify-between'>
                                     <div>
                                         {{ $loop->iteration }}. {{ $r->name }}
                                     </div>
@@ -44,7 +46,11 @@
                             @endforeach
                         </td>
                         <td class="px-2 py-2 font-medium text-slate-600">
-                            <x-siakad.hapus :id="$user->id" />
+                            <div class="flex gap-2">
+                                <x-siakad.link-edit href="{{ route('atur-user', $user->id) }}"
+                                    wire:navigate />
+                                <x-siakad.hapus :id="$user->id" />
+                            </div>
                         </td>
                     </tr>
                 @endforeach

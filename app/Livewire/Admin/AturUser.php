@@ -3,36 +3,38 @@
 namespace App\Livewire\Admin;
 
 use App\Models\User;
-use Illuminate\Support\Facades\DB;
-use Livewire\Attributes\Computed;
-use Livewire\Attributes\Title;
 use Livewire\Component;
+use Livewire\Attributes\Title;
+use Illuminate\Validation\Rule;
+use Livewire\Attributes\Computed;
+use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 
 #[Title('Atur User')]
 class AturUser extends Component
 {
+    public User $user;
     public $user_id;
+
+    public $name;
+    public $username;
+    public $password;
+    public $password_confirmation;
+
     public $role;
-    public $listUser = [];
     public $listRole = [];
 
-    protected $rules = [
-        'user_id' => 'required',
-        'role' => 'required',
-    ];
-
-    protected $messages = ['*.required' => 'Silahkan Dipilih'];
-
-    public function mount()
+    public function mount($id)
     {
+        $this->user_id = $id;
+        $this->user = User::find($id);
+
         $this->listRole = Role::query()
             ->orderBy('name')
             ->get();
-        $this->listUser = User::query()
-            ->whereNotNull('username')
-            ->orderBy('name')
-            ->get();
+
+        $this->name = $this->user->name;
+        $this->username = $this->user->username;
     }
 
     public function render()
@@ -40,9 +42,29 @@ class AturUser extends Component
         return view('livewire.admin.atur-user');
     }
 
+    public function update_data()
+    {
+        $this->validate([
+            'name' => 'required',
+            'username' => [
+                'required',
+                Rule::unique('users', 'username')->ignore($this->user_id),
+            ],
+        ]);
+
+        $this->user->name = $this->name;
+        $this->user->username = $this->username;
+        $this->user->save();
+
+        flash()->info('Berhasil Update Data');
+    }
+
     public function simpan()
     {
-        $this->validate();
+        $this->validate([
+            'user_id' => 'required',
+            'role' => 'required'
+        ]);
 
         $user = User::find($this->user_id);
         $user->assignRole($this->role);
@@ -58,11 +80,9 @@ class AturUser extends Component
     }
 
     #[Computed()]
-    public function listUser()
+    public function listRoles()
     {
-        return User::query()
-            ->with('roles')
-            ->orderBy('name')
-            ->get();
+        return User::with('roles')
+            ->find($this->user_id);
     }
 }

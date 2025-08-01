@@ -15,7 +15,7 @@
                         Nama Kategori
                     </th>
                     <th scope='col' class="px-2 py-3">
-                        Aksir
+                        Aksi
                     </th>
                 </tr>
             </thead>
@@ -28,7 +28,7 @@
                         <td class="px-2 py-2 font-medium text-slate-600">
                             {{ $kategori->nama }}
                         </td>
-                        <td class="px-2 py-2 font-medium text-slate-600">
+                        <td class="px-2 py-2 font-medium text-slate-600 text-center items-center">
                             <x-siakad.hapus :id="$kategori->id" />
                         </td>
                     </tr>

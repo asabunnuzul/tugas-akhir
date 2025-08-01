@@ -1,5 +1,5 @@
 <nav
-    class="fixed top-0 left-0 w-full px-3 py-2 border shadow-md border-emerald-300 backdrop-blur bg-white/80 shadow-emerald-300">
+    class="fixed top-0 left-0 w-full px-3 py-2 border  border-slate-300 backdrop-blur bg-white/80 ">
     <div class="flex items-center justify-between lg:justify-end">
         @unlessrole('Siswa')
             <div @click="open = true"
@@ -22,7 +22,7 @@
             </a>
         @endrole
         <div
-            class="font-extrabold text-transparent place-items-end text-md lg:text-xl bg-gradient-to-r bg-clip-text from-emerald-500 via-lime-500 to-teal-500 animate-text">
+            class="font-extrabold text-transparent place-items-end text-md lg:text-xl bg-gradient-to-r bg-clip-text from-slate-500 via-gray-500 to-zinc-500 animate-text">
             Sistem Praktik Lapangan
         </div>
     </div>
