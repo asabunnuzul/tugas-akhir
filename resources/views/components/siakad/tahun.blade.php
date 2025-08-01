@@ -1,7 +1,7 @@
 <div class="flex flex-col space-y-1 capitalize text-md text-slate-600">
     <div>tahun</div>
     <select {{ $attributes }}
-        class="border rounded-md shadow-md shadow-emerald-400 border-slate-200 focus:ring focus:ring-emerald-300 focus:border-none">
+        class="border rounded-md  border-slate-200 focus:ring focus:ring-slate-300 focus:border-none">
         <option value="">Pilih Tahun</option>
         @for ($i = 2021; $i < date('Y'); $i++)
             <option value="{{ $i + 1 . ' / ' . ($i + 2) }}">{{ $i + 1 . ' / ' . ($i + 2) }}</option>

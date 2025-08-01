@@ -4,7 +4,7 @@
     <div class="relative">
         <input type="{{ $type }}" {!! $attributes->merge([
             'class' =>
-                'pl-10 pr-4 w-full border rounded-md shadow-md shadow-emerald-400 border-slate-200 focus:ring focus:ring-emerald-300 focus:border-none',
+                'pl-10 pr-4 w-full border rounded-md border-slate-200 focus:ring focus:ring-slate-300 focus:border-none',
         ]) !!}>
         <div
             class="absolute inset-y-0 left-0 pl-3  

@@ -13,8 +13,8 @@ Route::view('profile', 'profile')
     ->name('profile');
 
 Route::get('atur-user/{id}', AturUser::class)->name('atur-user')->lazy();
-Route::get('dashboard', Dashboard::class)->name('dashboard')->middleware('auth');
-Route::get('profile-pengguna', ProfilePengguna::class)->name('profile-pengguna');
+Route::get('dashboard', Dashboard::class)->name('dashboard')->middleware('auth')->lazy();
+Route::get('profile-pengguna', ProfilePengguna::class)->name('profile-pengguna')->lazy();
 Route::post('logout', Logout::class)->name('logout');
 
 require __DIR__ . '/auth.php';

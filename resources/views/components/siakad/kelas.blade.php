@@ -2,7 +2,7 @@
 <div class="flex flex-col space-y-1 capitalize text-md text-slate-600">
     <div>{{ $label }}</div>
     <select
-        class="border rounded-md shadow-md shadow-emerald-400 border-slate-200 focus:ring focus:ring-emerald-300 focus:border-none {{ $disabled ? 'bg-gray-200' : '' }}"
+        class="border rounded-md border-slate-200 focus:ring focus:ring-slate-300 focus:ring focus:ring-emerald-300 focus:border-none {{ $disabled ? 'bg-gray-200' : '' }}"
         {{ $attributes }} {{ $disabled ? 'disabled' : '' }}>
         <option value="">Pilih kelas</option>
         @if ($isAlpine)

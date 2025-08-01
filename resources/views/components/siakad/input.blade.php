@@ -3,7 +3,7 @@
     <div>{{ $label }}</div>
     <input type="{{ $type }}" {!! $attributes->merge([
         'class' =>
-            'border rounded-md shadow-md shadow-emerald-400 border-slate-200 focus:ring focus:ring-emerald-300 focus:border-none ' .
+            'border rounded-md border-slate-200 focus:ring focus:ring-slate-300 focus:border-none ' .
             ($disabled ? ' bg-gray-200 ' : ''),
         'disabled' => $disabled ? true : false,
     ]) !!}>

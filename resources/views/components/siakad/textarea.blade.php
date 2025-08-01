@@ -4,7 +4,7 @@
     <div>{{ $label }}</div>
     <textarea {!! $attributes->merge([
         'class' =>
-            'border rounded-md shadow-md shadow-emerald-400 border-slate-200 focus:ring focus:ring-emerald-300 focus:border-none',
+            'border rounded-md  border-slate-200 focus:ring focus:ring-slate-300 focus:border-none',
     ]) !!}>{{ $value }}</textarea>
     @error($attributes['wire:model'] ?? $attributes['wire:model.live'])
         <small class="text-red-500">{{ $message }}</small>

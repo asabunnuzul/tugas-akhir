@@ -3,10 +3,13 @@
 namespace App\Livewire;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Hash;
+use Livewire\Attributes\Title;
 
+#[Title('Profile Pengguna')]
 class ProfilePengguna extends Component
 {
     use WithFileUploads;
@@ -28,7 +31,7 @@ class ProfilePengguna extends Component
 
     public function mount()
     {
-        $this->user = auth()->user();
+        $this->user = Auth::user();
         $this->nama = $this->user->name;
     }
 
@@ -48,12 +51,12 @@ class ProfilePengguna extends Component
             'password' => 'required|confirmed',
         ]);
 
-        if (!Hash::check($this->old_password, auth()->user()->password)) {
+        if (!Hash::check($this->old_password, Auth::user()->getAuthPassword())) {
             $this->addError('old_password', 'Password lama tidak sesuai.');
             return;
         }
 
-        User::find(auth()->user()->id)
+        User::find(Auth::user()->id)
             ->update(['password' => bcrypt($this->password)]);
 
         $this->reset('password', 'password_confirmation');

@@ -6,8 +6,8 @@
     </svg> --}}
 
     <div class='w-[90%]'>
-        <div class='h-1.5 w-full bg-emerald-100 overflow-hidden rounded-md'>
-            <div class='w-full h-full bg-emerald-500 progress left-right'></div>
+        <div class='h-1.5 w-full bg-slate-100 overflow-hidden rounded-md'>
+            <div class='w-full h-full bg-slate-500 progress left-right'></div>
         </div>
     </div>
 </div>
