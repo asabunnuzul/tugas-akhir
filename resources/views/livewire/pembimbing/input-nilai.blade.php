@@ -24,8 +24,8 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($this->listSiswa as $siswa)
-                    <tr :key="$siswa - > nis" class="bg-white border-b hover:bg-slate-300 odd:bg-slate-200">
+                @foreach ($this->listSiswa as $key => $siswa)
+                    <tr :key="$key" class="bg-white border-b hover:bg-slate-300 odd:bg-slate-200">
                         <td class="px-2 py-2 font-medium text-center text-slate-600">
                             {{ $loop->iteration }}
                         </td>

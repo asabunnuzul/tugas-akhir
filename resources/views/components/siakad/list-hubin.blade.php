@@ -1,9 +1,9 @@
 @props(['listHubin'])
 <div class="flex flex-col space-y-1 capitalize text-md text-slate-600">
-    <div>nama hubin</div>
+    <div>nama perusahaan</div>
     <select {{ $attributes }}
         class="border rounded-md  border-slate-200 focus:ring focus:ring-slate-300 focus:border-none">
-        <option value="">Pilih Hubin</option>
+        <option value="">Pilih Perusahaan</option>
         @foreach ($listHubin as $hubin)
             <option value="{{ $hubin->id }}">{{ $hubin->nama }}</option>
         @endforeach

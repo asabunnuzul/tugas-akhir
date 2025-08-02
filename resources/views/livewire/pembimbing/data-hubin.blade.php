@@ -1,8 +1,8 @@
 <x-siakad.card>
     <form wire:submit.prevent='simpan' class="space-y-3">
-        <x-siakad.header>data hubin</x-siakad.header>
-        <x-siakad.input label="Nama hubin" wire:model='nama' />
-        <x-siakad.textarea label="alamat hubin" wire:model='alamat' rows="3" />
+        <x-siakad.header>data perusahaan</x-siakad.header>
+        <x-siakad.input label="Nama perusahaan" wire:model='nama' />
+        <x-siakad.textarea label="alamat perusahaan" wire:model='alamat' rows="3" />
         <x-siakad.button label="Simpan" spinner='simpan' type='submit' />
     </form>
     <div class="pt-2 overflow-x-auto">

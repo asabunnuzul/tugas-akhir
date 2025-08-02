@@ -8,7 +8,7 @@ use Livewire\Attributes\Computed;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-#[Title('Data Hubin')]
+#[Title('Data Perusahaan')]
 class DataHubin extends Component
 {
     public $nama;
@@ -36,7 +36,7 @@ class DataHubin extends Component
         try {
             Hubin::create($validated);
             DB::commit();
-            flash('Berhasil Simpan Data Hubin');
+            flash('Berhasil Simpan Data Perusahaan');
             $this->reset('nama', 'alamat');
         } catch (\Throwable $th) {
             DB::rollBack();
@@ -53,7 +53,7 @@ class DataHubin extends Component
             Hubin::destroy($id);
             DB::commit();
 
-            flash()->warning('Berhasil Hapus Data Hubin');
+            flash()->warning('Berhasil Hapus Data Perusahaan');
         } catch (\Throwable $th) {
             DB::rollBack();
             throw $th;

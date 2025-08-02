@@ -27,13 +27,13 @@
                         Kelas
                     </th>
                     <th scope='col' class="px-2 py-3 text-left">
-                        Nama Hubin
+                        Nama Perusahaan
                     </th>
                     <th scope='col' class="px-2 py-3 text-left">
                         Alamat
                     </th>
                     <th scope='col' class="px-2 py-3 text-left">
-                        Pembimbing Hubin
+                        Pembimbing Perusahaan
                     </th>
                     <th scope='col' class="px-2 py-3 text-left">
                         Pembimbing Sekolah

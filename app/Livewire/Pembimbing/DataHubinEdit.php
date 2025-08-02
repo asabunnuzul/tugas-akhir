@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-#[Title('Edit Data Hubin')]
+#[Title('Edit Data Perusahaan')]
 class DataHubinEdit extends Component
 {
     public Hubin $hubin;
@@ -48,7 +48,7 @@ class DataHubinEdit extends Component
 
             DB::commit();
 
-            flash('Berhasil Update Data Hubin');
+            flash('Berhasil Update Data Perusahaan');
 
             $this->redirectRoute('data-hubin', navigate: true);
         } catch (\Throwable $th) {

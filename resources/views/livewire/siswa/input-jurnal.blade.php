@@ -23,7 +23,7 @@
                         Keterangan Kegiatan
                     </th>
                     <th scope='col' class="px-2 py-3">
-                        Hubin
+                        Perusahaan
                     </th>
                     <th scope='col' class="px-2 py-3">
                         Aksi
