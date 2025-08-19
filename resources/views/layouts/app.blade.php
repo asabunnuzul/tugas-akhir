@@ -23,12 +23,12 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased bg-gray-50 text-slate-600" x-data="{ open: false }">
-    <div class="block lg:hidden">
+<body class="font-sans antialiased bg-sky-100 text-slate-600" x-data="{ open: false }">
+    <div class="block lg:hidden bg-sky-400">
         <x-sidebar.responsive />
     </div>
     <div class="flex">
-        <aside class="z-20 hidden h-full py-10 overflow-y-auto bg-white lg:fixed lg:block lg:w-80" x-cloak>
+        <aside class="z-20 hidden h-full py-10 overflow-y-auto bg-sky-400 lg:fixed lg:block lg:w-80" x-cloak>
             <x-sidebar.layout />
         </aside>
         <div class="flex-1 w-full overflow-y-auto lg:ml-80">
